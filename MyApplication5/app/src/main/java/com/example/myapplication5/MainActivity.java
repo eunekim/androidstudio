@@ -28,41 +28,43 @@ public class MainActivity extends AppCompatActivity {
     int curNum=0;
     File[] imageFiles;
     String imageFname;
-    TextView a;
+    TextView textNum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setTitle("간단 일기장");
+        setTitle("간단 이미지 뷰어");
 
         ActivityCompat.requestPermissions(this, new String[] {android.
                 Manifest.permission.WRITE_EXTERNAL_STORAGE},MODE_PRIVATE);
         btnPrev = (Button) findViewById(R.id.btnPrev);
         btnNext = (Button) findViewById(R.id.btnNext);
         myPicture = (myPictureView) findViewById(R.id.myPictureView1);
+        textNum = (TextView)findViewById(R.id.textNum);
+
 
         imageFiles = new File(Environment.getExternalStorageDirectory().
                 getAbsolutePath()+"/Pictures").listFiles();
         imageFname = imageFiles[curNum].toString();
         myPicture.imagePath = imageFname;
-
-        a = (TextView)findViewById(R.id.text1);
+        textNum.setText((curNum+1)+"/"+imageFiles.length);
 
         btnPrev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (curNum <= 0) {
-                    imageFname = imageFiles[4].toString();
+                    curNum = imageFiles.length - 1;
+                    imageFname = imageFiles[curNum].toString();
                     myPicture.imagePath = imageFname;
                     myPicture.invalidate();
-                    a.setText("5/5");
+                    textNum.setText((curNum+1)+"/"+imageFiles.length);
                 } else {
                     curNum--;
                     imageFname = imageFiles[curNum].toString();
                     myPicture.imagePath = imageFname;
                     myPicture.invalidate();
-                    a.setText(curNum+1+"/5");
+                    textNum.setText((curNum+1)+"/"+imageFiles.length);
                 }
             }
         });
@@ -71,16 +73,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (curNum >= imageFiles.length-1) {
+                    curNum = 0;
                     imageFname = imageFiles[0].toString();
                     myPicture.imagePath = imageFname;
                     myPicture.invalidate();
-                    a.setText("1/5");
+                    textNum.setText((curNum+1)+"/"+imageFiles.length);
                 } else {
                     curNum++;
                     imageFname = imageFiles[curNum].toString();
                     myPicture.imagePath = imageFname;
                     myPicture.invalidate();
-                    a.setText(curNum+1+"/5");
+                    textNum.setText((curNum+1)+"/"+imageFiles.length);
                 }
 
             }
