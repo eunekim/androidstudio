@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     int curNum=0;
     File[] imageFiles;
     String imageFname;
-
     TextView a;
 
     @Override
