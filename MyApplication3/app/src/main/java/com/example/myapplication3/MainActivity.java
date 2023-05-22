@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
+import android.widget.ViewFlipper;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -18,12 +20,14 @@ public class MainActivity extends AppCompatActivity {
     Fragment2 fragment2;
     Fragment3 fragment3;
 
+    ViewFlipper v_fllipper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toolbar = findViewById(R.id.toolbar);
+//        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();
@@ -32,6 +36,19 @@ public class MainActivity extends AppCompatActivity {
         fragment1 = new Fragment1();
         fragment2 = new Fragment2();
         fragment3 = new Fragment3();
+
+        int images[] = {
+                R.drawable.a,  //첫번째 파일 이름
+                R.drawable.a2, //두번째 파일 이름
+                R.drawable.a3 //세번째 파일 이름
+        };
+
+        v_fllipper = findViewById(R.id.image_slide);
+
+        for(int image : images) {
+            fllipperImages(image);
+        }
+
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment1).commit();
 
@@ -66,4 +83,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    public void fllipperImages(int image) {
+        ImageView imageView = new ImageView(this);
+        imageView.setBackgroundResource(image);
+
+        v_fllipper.addView(imageView);      // 이미지 추가
+        v_fllipper.setFlipInterval(4000);       // 자동 이미지 슬라이드 딜레이시간(1000 당 1초)
+        v_fllipper.setAutoStart(true);          // 자동 시작 유무 설정
+
+        // animation
+        v_fllipper.setInAnimation(this,android.R.anim.slide_in_left);
+        v_fllipper.setOutAnimation(this,android.R.anim.slide_out_right);
+    }
+
 }
