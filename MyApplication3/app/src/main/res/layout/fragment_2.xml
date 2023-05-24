@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Fragment2">
 
     <ScrollView
@@ -10,76 +11,80 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_margin="20dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="20dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:text="운영시간"
-                    android:textStyle="bold"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:textStyle="bold" />
+
                 <TextView
-                    android:text="@string/des1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:text="@string/des1" />
+
                 <View
-                    android:layout_margin="15dp"
-                    android:background="#6E6E6E"
                     android:layout_width="match_parent"
-                    android:layout_height="2px"/>
+                    android:layout_height="2px"
+                    android:layout_margin="15dp"
+                    android:background="#6E6E6E" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:text="유의사항"
-                    android:textStyle="bold"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:textStyle="bold" />
+
                 <TextView
-                    android:text="@string/des2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:text="@string/des2" />
+
                 <View
-                    android:layout_margin="15dp"
-                    android:background="#6E6E6E"
                     android:layout_width="match_parent"
-                    android:layout_height="2px"/>
+                    android:layout_height="2px"
+                    android:layout_margin="15dp"
+                    android:background="#6E6E6E" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <TextView
-                    android:text="유의사항"
-                    android:textStyle="bold"
-                    android:gravity="center"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="기타사항"
+                    android:textStyle="bold" />
+
                 <TextView
-                    android:text="@string/des2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-                <View
-                    android:layout_margin="15dp"
-                    android:background="#6E6E6E"
-                    android:layout_width="match_parent"
-                    android:layout_height="2px"/>
+                    android:text="@string/des3" />
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

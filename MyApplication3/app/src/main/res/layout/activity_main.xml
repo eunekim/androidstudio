@@ -7,10 +7,6 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -32,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 android:gravity="center"
-                android:text="경복궁"
+                android:text="경기광주 한옥마을"
                 android:textColor="#000000"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -68,5 +64,4 @@
                     app:layout_behavior="@string/appbar_scrolling_view_behavior" />
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
         </LinearLayout>
-    </ScrollView>
 </LinearLayout>

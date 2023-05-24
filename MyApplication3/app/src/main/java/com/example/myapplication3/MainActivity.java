@@ -39,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
         fragment3 = new Fragment3();
 
         int images[] = {
-                R.drawable.a,  //첫번째 파일 이름
-                R.drawable.a2, //두번째 파일 이름
-                R.drawable.a3 //세번째 파일 이름
+                R.drawable.img,  //첫번째 파일 이름
+                R.drawable.img_1, //두번째 파일 이름
+                R.drawable.img_2 //세번째 파일 이름
         };
 
         v_fllipper = findViewById(R.id.image_slide);
