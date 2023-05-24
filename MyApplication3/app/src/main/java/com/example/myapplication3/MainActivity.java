@@ -14,7 +14,7 @@ import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    Toolbar toolbar;
+//    Toolbar toolbar;
 
     Fragment1 fragment1;
     Fragment2 fragment2;
@@ -26,9 +26,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("놀러가까");
 
 //        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
@@ -45,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
 
         v_fllipper = findViewById(R.id.image_slide);
 
+//        v_fllipper = { boolean clipToOutline = true};
+
+
         for(int image : images) {
             fllipperImages(image);
         }
@@ -53,9 +57,9 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment1).commit();
 
         TabLayout tabs = findViewById(R.id.tabs);
-        tabs.addTab(tabs.newTab().setText("통화기록"));
-        tabs.addTab(tabs.newTab().setText("스팸기록"));
-        tabs.addTab(tabs.newTab().setText("연락처"));
+        tabs.addTab(tabs.newTab().setText("축제설명"));
+        tabs.addTab(tabs.newTab().setText("상세정보"));
+        tabs.addTab(tabs.newTab().setText("리뷰"));
 
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

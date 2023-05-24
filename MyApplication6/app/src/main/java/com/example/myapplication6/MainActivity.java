@@ -32,9 +32,9 @@ public class MainActivity extends AppCompatActivity {
             image[index].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    voteCount[index]++;
-                    Toast.makeText(getApplicationContext(),
-                            imgName[index] + ": 총 " + voteCount[index] + " 표",
+                    voteCount[index]++;,
+                    imgName
+                    Toast.makeText(getApplicationContext()[index] + ": 총 " + voteCount[index] + " 표",
                             Toast.LENGTH_SHORT).show();
                 }
             });

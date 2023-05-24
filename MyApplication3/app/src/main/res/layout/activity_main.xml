@@ -7,55 +7,66 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ViewFlipper
-        android:id="@+id/image_slide"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"/>
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-<!--            <androidx.appcompat.widget.Toolbar-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:id="@+id/toolbar"-->
-<!--                android:background="?colorPrimaryDark"-->
-<!--                android:elevation="1dp"-->
-<!--                android:theme="@style/ThemeOverlay.AppCompat.Dark">-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:id="@+id/titleText"-->
-<!--                    android:text="타이틀"/>-->
-
-<!--            </androidx.appcompat.widget.Toolbar>-->
-
-            <com.google.android.material.tabs.TabLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/tabs"
-                android:background="@android:color/background_light"
-                android:elevation="1dp"
-                app.tabGrvity="fill"
-                app:tabMode="fixed"
-                app:tabSelectedTextColor="?colorAccent"
-                app:tabTextColor="?colorPrimary"/>
-
-        </com.google.android.material.appbar.AppBarLayout>
-        <FrameLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/container"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+            android:orientation="vertical">
+
+            <ViewFlipper
+                android:background="@drawable/koner_layout"
+                android:id="@+id/image_slide"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="25dp"
+                android:clipToOutline="true"
+                android:elevation="40dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:gravity="center"
+                android:text="경복궁"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.appbar.AppBarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tabs"
+                        app.tabGrvity="fill"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/background_light"
+                        android:elevation="1dp"
+                        app:tabIndicatorColor="#FF8000"
+                        app:tabMode="fixed"
+                        app:tabSelectedTextColor="#FF8000"
+                        app:tabTextColor="#FF8000" />
+
+                </com.google.android.material.appbar.AppBarLayout>
 
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
+                <FrameLayout
+                    android:id="@+id/container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
